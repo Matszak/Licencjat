@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.28773582, b: 0.28773582, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 965019490368392474}
   - component: {fileID: 9142681037596407623}
   - component: {fileID: 3666229810790606892}
-  - component: {fileID: 7994283094869453649}
   - component: {fileID: 4451102984700657480}
   m_Layer: 0
   m_Name: PlayerA
@@ -137,6 +136,8 @@ MonoBehaviour:
     m_Bits: 8
   maxSpeed: 3
   jumpForce: 260
+  gravityModifier: 0.4
+  minGroundNormalY: 0.92
   velocity: {x: 0, y: 0}
 --- !u!50 &3666229810790606892
 Rigidbody2D:
@@ -146,9 +147,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6503776673651373890}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 60.49
   m_LinearDrag: 0
@@ -162,44 +163,9 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &7994283094869453649
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503776673651373890}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!114 &4451102984700657480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +223,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 45c3343b-42f0-4b87-80de-b2ba1dc08d99
     m_ActionName: PlayerA/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 399793b3-4a73-41cb-a6bc-31e21993ad47
+    m_ActionName: PlayerB/Movement[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec028bcf-1db8-4f47-bb14-4e70baa9dc57
+    m_ActionName: PlayerB/Jump[/Keyboard/upArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerA
