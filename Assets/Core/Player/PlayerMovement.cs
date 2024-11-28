@@ -80,12 +80,12 @@ public class NewBehaviourScript : MonoBehaviour
         
         if (distance > _minMoveDistance)
         {
-            var count = _rigidbody2D.Cast(velocity,_hitBuffer, distance + _shellRadius);
+            var count = _rigidbody2D.Cast(move,_hitBuffer, distance + _shellRadius);
             for (var i = 0; i < count; i++)
             {
                 var currentNormal = _hitBuffer[i].normal;
                 if (currentNormal.y > minGroundNormalY)
-                {
+                {   
                     _isGrounded = true;
                     if (yMovement)
                     {
@@ -96,12 +96,11 @@ public class NewBehaviourScript : MonoBehaviour
                 if (_isGrounded)
                 {
                     var projection = Vector2.Dot(velocity, currentNormal);
-                    if (projection > 0)
+                    if (projection < 0)
                     {
                         velocity -= projection * currentNormal;
                     }
-
-                    velocity.y = 0;
+ 
     
                 }
                 else
