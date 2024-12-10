@@ -185,8 +185,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6503776673651373890, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 429174914}
   m_SourcePrefab: {fileID: 100100000, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+--- !u!1 &429174908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6503776673651373890, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+  m_PrefabInstance: {fileID: 413741314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &429174914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429174908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b417eab982fb847b390a451a2d8a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleAmount: 1
+  minScale: {x: 0.5, y: 0.5, z: 0.5}
+  maxScale: {x: 2, y: 2, z: 2}
+  growKey: 101
+  minimalizeKey: 113
+  resetKey: 113
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
