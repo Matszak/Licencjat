@@ -2,41 +2,61 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ScaleChanger : MonoBehaviour
 {
-    [SerializeField] private float scaleAmount = 0.5f;
+
+    [Header("Scale Controller")]
+    
+    [SerializeField] private float scaleAmount = 1f;
     [SerializeField] private Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f);
     [SerializeField] private Vector3 maxScale = new Vector3(2f,2f,2f);
-    [SerializeField] private KeyCode growKey = KeyCode.E; 
-    [SerializeField] private KeyCode minimalizeKey = KeyCode.Q;
+    [SerializeField] private KeyCode scaleUp = KeyCode.E; 
+    [SerializeField] private KeyCode scaleDown = KeyCode.Q;
     [SerializeField] private KeyCode resetKey = KeyCode.R;
 
     private Vector3 originalScale;
+
+    
+    [Header("Mass Scale Controller")]
+    
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private NewBehaviourScript
+    [SerializeField] private float baseMass = 10f;
+
+
+    public Transform characterTransform;
 
 
     private void Start()
     {
         originalScale = transform.localScale;
+        _rb = GetComponent<Rigidbody2D>();
+
+        if (_rb != null)
+        {
+            baseMass = _rb.mass;
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(growKey))
+        if (Input.GetKeyDown(scaleUp))
         {
-            Vector3 newScale = transform.localScale + Vector3.one * scaleAmount;
-            transform.localScale = Vector3.Min(newScale, maxScale);
+            characterTransform.DOScale(maxScale, scaleAmount);
+            baseMass = 200f;
         }
 
-        if (Input.GetKeyDown(minimalizeKey))
+        if (Input.GetKeyDown(scaleDown))
         {
-            Vector3 newScale = transform.localScale - Vector3.one * scaleAmount;
-            transform.localScale = Vector3.Max(newScale, minScale);
+            characterTransform.DOScale(minScale, scaleAmount);
+            baseMass = 50f;
         }
 
         if (Input.GetKeyDown(resetKey))
         {
-            transform.localScale = Vector3.Max(Vector3.Min(originalScale, maxScale), minScale);
+            characterTransform.DOScale(originalScale, scaleAmount);
         }
     }
 }
