@@ -22,7 +22,7 @@ public class ScaleChanger : MonoBehaviour
     [Header("Mass Scale Controller")]
     
     [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private NewBehaviourScript
+  
     [SerializeField] private float baseMass = 10f;
 
 
