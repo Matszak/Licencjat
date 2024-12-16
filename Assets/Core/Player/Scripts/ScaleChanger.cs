@@ -9,7 +9,11 @@ public class ScaleChanger : MonoBehaviour
 
     [Header("Scale Controller")]
     
-    public Transform characterTransform;
+    [SerializeField] private PlayerMovement player1Movement;
+    [SerializeField] private PlayerMovement player2Movement;
+    
+    [SerializeField] private Transform player1Transform;
+    [SerializeField] private Transform player2Transform;
 
     [SerializeField] private float scaleAmount = 1f;
     [SerializeField] private Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -47,21 +51,26 @@ public class ScaleChanger : MonoBehaviour
     {
         if (Input.GetKeyDown(scaleUp))
         {
-            characterTransform.DOScale(maxScale, scaleAmount);
+            player1Transform.DOScale(maxScale, scaleAmount);
             baseMass = 200f;
-            playerMovement.maxSpeed = 1f;
+            player1Movement.maxSpeed = 5f;        
         }
 
         if (Input.GetKeyDown(scaleDown))
         {
-            characterTransform.DOScale(minScale, scaleAmount);
+            player2Transform.DOScale(minScale, scaleAmount);
             baseMass = 50f;
-            playerMovement.maxSpeed = 25f;
+            player2Movement.maxSpeed = 15f;
+            
         }
 
         if (Input.GetKeyDown(resetKey))
         {
-            characterTransform.DOScale(originalScale, scaleAmount);
+            player1Transform.DOScale(originalScale, scaleAmount);
+            player2Transform.DOScale(originalScale, scaleAmount);
+
+            player1Movement.maxSpeed = 10f;        
+            player2Movement.maxSpeed = 10f;        
         }
     }
 }
