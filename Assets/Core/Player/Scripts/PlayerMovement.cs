@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isGrounded;
 
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float maxSpeed;
+    [SerializeField] public float maxSpeed;
     [SerializeField] private float jumpForce;
     public Vector2 velocity;
     

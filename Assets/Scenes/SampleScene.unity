@@ -178,6 +178,11 @@ Transform:
   - {fileID: 979407417}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &317577696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8468296332691172442, guid: e0d1d6f2ac6acaf468de22d69e74ab5b, type: 3}
+  m_PrefabInstance: {fileID: 499102754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &413741314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,6 +247,26 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5415990400975428416, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+      propertyPath: _rb
+      value: 
+      objectReference: {fileID: 735623019}
+    - target: {fileID: 5415990400975428416, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+      propertyPath: baseMass
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415990400975428416, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+      propertyPath: resetKey
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415990400975428416, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 735623020}
+    - target: {fileID: 5415990400975428416, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+      propertyPath: characterTransform
+      value: 
+      objectReference: {fileID: 735623021}
     - target: {fileID: 6503776673651373890, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
       propertyPath: m_Name
       value: PlayerA
@@ -267,6 +292,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3920305930861477437, guid: e0d1d6f2ac6acaf468de22d69e74ab5b, type: 3}
+      propertyPath: objectTransform
+      value: 
+      objectReference: {fileID: 317577696}
     - target: {fileID: 7711935695273017372, guid: e0d1d6f2ac6acaf468de22d69e74ab5b, type: 3}
       propertyPath: m_Name
       value: oneButtonDoor
@@ -665,6 +694,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &735623019 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3666229810790606892, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+  m_PrefabInstance: {fileID: 413741314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735623020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9142681037596407623, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+  m_PrefabInstance: {fileID: 413741314}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8628601c9c3300a4d8be3adcef317ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &735623021 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 965019490368392474, guid: 11aa7d553c32ad24f8c3e9d23be5868a, type: 3}
+  m_PrefabInstance: {fileID: 413741314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &752430169
 PrefabInstance:
   m_ObjectHideFlags: 0

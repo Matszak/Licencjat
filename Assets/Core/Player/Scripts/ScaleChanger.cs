@@ -9,6 +9,8 @@ public class ScaleChanger : MonoBehaviour
 
     [Header("Scale Controller")]
     
+    public Transform characterTransform;
+
     [SerializeField] private float scaleAmount = 1f;
     [SerializeField] private Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f);
     [SerializeField] private Vector3 maxScale = new Vector3(2f,2f,2f);
@@ -22,11 +24,12 @@ public class ScaleChanger : MonoBehaviour
     [Header("Mass Scale Controller")]
     
     [SerializeField] private Rigidbody2D _rb;
-  
-    [SerializeField] private float baseMass = 10f;
 
+    [SerializeField] private float baseMass;
 
-    public Transform characterTransform;
+    [Header("Player Movement Controller")] 
+    
+    [SerializeField] private PlayerMovement playerMovement;
 
 
     private void Start()
@@ -46,12 +49,14 @@ public class ScaleChanger : MonoBehaviour
         {
             characterTransform.DOScale(maxScale, scaleAmount);
             baseMass = 200f;
+            playerMovement.maxSpeed = 1f;
         }
 
         if (Input.GetKeyDown(scaleDown))
         {
             characterTransform.DOScale(minScale, scaleAmount);
             baseMass = 50f;
+            playerMovement.maxSpeed = 25f;
         }
 
         if (Input.GetKeyDown(resetKey))

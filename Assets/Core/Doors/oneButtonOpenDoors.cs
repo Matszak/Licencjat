@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class oneButtonOpenDoors : MonoBehaviour
 {
+    public Transform objectTransform;
 
     private bool _doorsOpen;
     public void OpenDoors()
-    { 
-        transform.position += new Vector3(0, 10, 0);
+    {
+        objectTransform.DOMoveY(2f, 3);
     }
 
     public void CloseDoors()
     {
-        transform.position -= new Vector3(0, 10, 0); 
+        objectTransform.DOMoveY(-2, 3);
     }
 }
