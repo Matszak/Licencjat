@@ -38,6 +38,7 @@ public class ScaleChanger : MonoBehaviour
 
     private void Start()
     {
+        _characterTransform = transform;
         originalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
 

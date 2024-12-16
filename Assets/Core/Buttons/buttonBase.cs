@@ -12,13 +12,25 @@ public class buttonBase : MonoBehaviour
 
     public UnityEvent releaseButton;
 
+    private bool isPressed = false;
+
+    private int pressCount = 0;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        pressButton?.Invoke();
+        pressCount++;
+        if (pressCount == 1)
+        {
+            pressButton?.Invoke();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        releaseButton?.Invoke();
+        pressCount = Mathf.Max(pressCount - 1, 0);
+        if (pressCount == 0)
+        {
+            releaseButton?.Invoke();
+        }
     }
 }
